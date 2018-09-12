@@ -57,6 +57,7 @@ gitlab-rake gitlab:backup:restore BACKUP=1393513186
 
 ```
 sudo gitlab-ctl start
+sudo gitlab-ctl reconfigure
 ```
 
  
@@ -67,3 +68,5 @@ sudo gitlab-ctl start
 ```
 scp root@192.168.4.136:/var/opt/gitlab/backups/1531286755_2018_07_11_11.0.2_gitlab_backup.tar /users/shaipe/
 ```
+
+#### 
