@@ -2,6 +2,21 @@
 
 ## 安装
 
+### Docker 在Windows中使用
+
+1. 在windows中启动好之后 docker pull xxx 报错如下错误解决办法
+
+no matching manifest for unknown in the manifest list enties;
+
+是因为docker的配置文件中的: experimental: false导致
+
+docker在windows下的配置目录为: c:\programdata\docker\config\dadmon.json
+
+修改: experimental: true
+
+通过 docker info 查看是否配置成功
+
+
 ## 安装镜像
 
 ```

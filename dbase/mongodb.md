@@ -16,10 +16,28 @@ docker images       // 查看是否已经安装好mongo
 ### 运行 mongo
 
 ```
+docker start 容器id
+```
+
+### 创建 mongo 容器
+
+```
+docker run -d \
+-p 27017:27017 \
+-v ~/docker/mongo/conf:/data/conf \
+-v ~/docker/mongo/data:/data/db \
+--name cocker-mongo \
+mongo:latest
+```
+
+```
 # 不带授权的方式
 docker run -d -p 27017:27017 -v mongo_configdb:/data/configdb -v mongo_db:/data/db --name mongo docker.io/mongo
 # 需要授权的方式
 docker run --name <YOUR-NAME> -p 27017:27017 -v /data/db:/data/db -d mongo:3.4 --auth
+
+
+
 
 ```
 —name 指定库的名字，如果不指定会使用一串随机字符串。
