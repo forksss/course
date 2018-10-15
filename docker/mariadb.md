@@ -20,7 +20,7 @@ docker run  --name mariadb3306 \
 
 ### 第二步把mariadb自动生成的my.cnf拷贝到映射目录
 
-```
+```bash
 # 拷贝文件
 docker cp mariadb3306:/etc/mysql/my.cnf ~/docker mariadb/conf/ 
 # 停止刚创建的容器
@@ -31,7 +31,8 @@ docker rm mariadb3306
 ```
 
 ### 第三步修改my.cnf
-```
+
+```bash
 vim ~/docker/mariadb/conf/my.cnf
 
 # [mysqld] 下添加配置项
@@ -42,7 +43,8 @@ default-time_zone=+8:00
 ```
 
 ### 最后生新创建容器
-```
+
+```bash
 # 重新创建容器并挂载外部配置文件
 docker run  --name mariadb3306 \
 -p 3306:3306 \
