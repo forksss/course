@@ -11,6 +11,7 @@ docker pull Mariadb
 ### 第一步创建一个mariadb容器
 
 ```
+# MYSQL_ROOT_PASSWORD=mysql.root 这里是给定mariadb中root的初始密码
 docker run  --name mariadb3306 \
 -p 3306:3306 \
 -v ~/docker/mariadb/data:/var/lib/mysql \
