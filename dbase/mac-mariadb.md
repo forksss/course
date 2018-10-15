@@ -143,7 +143,13 @@ mysql> show variables like "%character%";show variables like "%collation%";
 
 字符集配置完成。
 
+ ## linux 下时区设置
+
+ 1. 通过tzseelct 选择时区
+ 2. 在.base_profile 或 /etc/profile 后面增加: TZ='Asia/Shanghai'; export TZ
+ 3. source /etc/profile 
  
+
 
 3、添加用户，设置权限
 

@@ -25,6 +25,9 @@ sudo gitlab-rake gitlab:backup:create
 #### gitlab定时自动备份
 
 ```
+# 采用contab -e的方式进行自动备份
+contab -e
+
 /opt/gitlab/bin/gitlab-rake gitlab:backup:create
 ```
 

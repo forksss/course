@@ -2,6 +2,11 @@
 
 ## 安装
 
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+```
+
 ### Docker 在Windows中使用
 
 1. 在windows中启动好之后 docker pull xxx 报错如下错误解决办法
