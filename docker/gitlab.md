@@ -13,7 +13,8 @@ docker exec 容器名或容器id gitlab-rake gitlab:backup:create
 
 ## 自动备份
 
-需要使用linux的contab的自动执行命令来进行备份
+需要使用linux的crontab的自动执行命令来进行备份
+**注意这里是在宿主机上设置,在gitlab的docker中是没有crontab的**
 1. 创建手动备份执行脚本
 
 ```
