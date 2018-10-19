@@ -2,7 +2,7 @@
 
 ## 手动备份
 
-```
+```bash
 # 第一种进行入容器执行命令的方法进行手工备份
 docker exec -it 容器名或容器id bash # 进入容器
 gitlab-rake gitlab:backup:create    # 执行gitlab备份命令
@@ -17,25 +17,32 @@ docker exec 容器名或容器id gitlab-rake gitlab:backup:create
 **注意这里是在宿主机上设置,在gitlab的docker中是没有crontab的**
 1. 创建手动备份执行脚本
 
-```
-#！ /bin/bash
+```shell
+#! /bin/bash
 case "$1" in 
     start)
             docker exec gitlab-ce11.2.3 gitlab-rake gitlab:backup:create
             ;;
 esac
 ```
-2. 创建定时执行计划
+
+2. 给脚本可执行权限
+
+```bash
+chmod +x /root/gitlab_backup.sh
 ```
+
+2. 创建定时执行计划
+
+```bash
 # 使用crontab -e 进入定时任务编辑界面，新增如下内容
 crontab -e
 # 编辑定时任务
 0 2 * * * /root/gitlab_backup.sh start
-
-
 ```
 
 ## Crontab 命令说明
+
 crontab -e 进入
 *  *  *  *  *  command
 分  时  日  月  周  命令
